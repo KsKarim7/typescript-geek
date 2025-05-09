@@ -1,4 +1,5 @@
 {
+    // type alias: for primitive datatype
     // interface 
     type User1 = {
         name: string;
