@@ -1,5 +1,5 @@
 {
-    // intercae - generic
+    // interface - generic
 
     interface Developer<T, X = null> {
         name: string;

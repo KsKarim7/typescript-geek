@@ -1,3 +1,3 @@
 "use strict";
-var c = "next level";
+let c = "next level";
 console.log(c);
