@@ -27,7 +27,7 @@
         age: 200,
         contactNo: "017",
     };
-    person1.name = "Mr. YZ";
+    // person1.name = "Mr. YZ";
 
     // Record
     // type MyObj = {
@@ -39,13 +39,13 @@
 
     const EmptyObj: Record<string, unknown> = {};
 
-    const obj1: MyObj = {
-        a: "aa",
-        b: "bb",
-        c: "cc",
-        d: "dd",
-        e: 6,
-    };
+    // const obj1: MyObj = {
+    //     a: "aa",
+    //     b: "bb",
+    //     c: "cc",
+    //     d: "dd",
+    //     e: 6,
+    // };
 
     //
 }
