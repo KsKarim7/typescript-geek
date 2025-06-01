@@ -48,3 +48,31 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 // console.log(concatenateArrays(["a", "b"], ["c"]));
 // concatenateArrays([1, 2], [3, 4], [5]);
+
+
+class Vehicle {
+    private make: string;
+    private year: number;
+
+    constructor(make: string, year: number) {
+        this.make = make;
+        this.year = year;
+    }
+
+    public getInfo(): string {
+        return `Make: ${this.make}, Year: ${this.year}`;
+    }
+}
+
+class Car extends Vehicle {
+    private model: string;
+
+    constructor(make: string, year: number, model: string) {
+        super(make, year); // Call the parent class constructor
+        this.model = model;
+    }
+
+    public getModel(): string {
+        return `Model: ${this.model}`;
+    }
+}
