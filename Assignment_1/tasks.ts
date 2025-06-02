@@ -68,7 +68,7 @@ class Car extends Vehicle {
     private model: string;
 
     constructor(make: string, year: number, model: string) {
-        super(make, year); // Call the parent class constructor
+        super(make, year);
         this.model = model;
     }
 
@@ -76,3 +76,91 @@ class Car extends Vehicle {
         return `Model: ${this.model}`;
     }
 }
+
+// const myCar = new Car("Toyota", 2020, "Corolla");
+// myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
+// myCar.getModel();  // Output: "Model: Corolla"
+
+
+function processValue(val: string | number): number {
+    if (typeof val == "string") {
+        return val.length
+    }
+    else {
+        return val * 2;
+    }
+}
+
+// processValue("hello"); 
+// processValue(10);     
+
+
+interface Product {
+    name: string;
+    price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+    const res: Product[] = [];
+    // let count: number = 0;
+    for (let i = 0; i < products.length; i++) {
+        if (res.length == 0) {
+            res.push(products[i]);
+            // count++;
+        }
+        else {
+            if (products[i].price > res[0].price) {
+                res[0] = products[i];
+            }
+        }
+    }
+    if (res.length != 0) {
+        return res[0];
+    }
+    else {
+        return null;
+    }
+}
+const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+];
+
+// console.log(getMostExpensiveProduct(products));
+
+enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+function getDayType(day: Day): string {
+    if (day === Day.Saturday || day === Day.Sunday) {
+        return "Weekend";
+    } else {
+        return "Weekday";
+    }
+}
+// console.log(getDayType(Day.Monday));   // Output: "Weekday"
+// console.log(getDayType(Day.Sunday));   // Output: "Weekend"
+
+
+async function squareAsync(n: number): Promise<number> {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            if (n < 0) {
+                rej("Negative number not allowed");
+            } else {
+                res(n * n);
+            }
+        }, 1000);
+    });
+}
+squareAsync(4).then(console.log);        // Output after 1s: 16
+squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
+
